@@ -16,13 +16,12 @@ let computerPlayResult = computerPlay(options)
  //runs computerPlay agains options
 
 
-let playerSelection = prompt("Pick Rock Paper or Scissors" , "").toLowerCase()
+let playerSelection = ("")
 //input from player - set to be case-insensitive
-
 let roundResult = (0)
 //result will contain the result of each playRound 
 let playerTally = (0)
-//counts player wins
+//counts player winsGame
 let computerTally = (0)
 //counts computer wins
 let roundWin = ("You Win! " + playerSelection + " beats "  + computerPlayResult)
@@ -32,7 +31,6 @@ let roundLose = ("You Lose! " + computerPlayResult + " beats "  + playerSelectio
 let roundAnnounce = ("test")
 
 //game function plays out and stores result in result variable
-playRound(playerSelection, computerPlayResult);
 function playRound(player, computer){
     if (player=="rock" && computer =="paper"){
         roundResult =(0)
@@ -52,22 +50,22 @@ function playRound(player, computer){
         roundResult = (3)
     }
 }
+
 //Translate round result to win/lose/tie/NaN 
 roundResultAnnounce(roundResult);
 function roundResultAnnounce(x){
     if (roundResult == 1){
-        roundAnnounce = (roundWin)
+        roundAnnounce = (roundWin);
     } else if (roundResult == 0){
-        roundAnnounce = (roundLose)
+        roundAnnounce = (roundLose);
     } else if (roundResult == 2){
-        roundAnnounce =("Its a Tie")
+        roundAnnounce =("Its a Tie");
     } else {
-        roundAnnounce =("You did not type a valid option")
+        roundAnnounce =("You did not type a valid option");
     }
 }
 
 //keep count of wins for player and computer
-roundTotal(roundResult);
 function roundTotal(x){
     if (x == 1){
         return ++playerTally;
@@ -77,8 +75,21 @@ function roundTotal(x){
     } 
 }
 const playResult = playRound(playerSelection, computerPlayResult)
-console.log( "player played " + (playerSelection))
-console.log ("player tally is " + playerTally);
-console.log( "computer played " + (computerPlayResult))
-console.log ("computer tally is " + computerTally);
-console.log (roundAnnounce)
+
+
+//this plays the game rock paper scissors for 5 rounds
+for (let i = 0; i <5; i++) {
+    let playerSelection = prompt("Pick Rock Paper or Scissors" , "").toLowerCase()
+    let computerPlayResult = computerPlay(options)
+    playRound(playerSelection, computerPlayResult);
+    roundTotal(roundResult)
+    roundResultAnnounce(roundResult)
+    console.log( "player played " + (playerSelection))
+    console.log ("player tally is " + (playerTally));
+    console.log( "computer played " + (computerPlayResult))
+    console.log ("computer tally is " + (computerTally));
+    console.log (roundAnnounce)
+    console.log (roundResult)
+   
+
+}

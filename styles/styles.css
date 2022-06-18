@@ -1,21 +1,20 @@
 /* stylesheet for RockPaperScissors game */
 
-function playRound(player, computer){
-    if (player=="rock" && computer =="paper"){
-        result =("You Lose! " + player + " beats "  + computer)
-    } else if (player=="paper" && computer =="scissors"){
-        result =("You Lose! " + player + " beats "  + computer)
-    } else if (player=="scissors" && computer =="rock"){
-        result =("You Lose! " + player + " beats "  + computer)
-    } else if (player=="scissors" && computer =="paper"){
-        result =("You Win! " + player + " beats "  + computer)
-    } else if (player=="paper" && computer =="rock"){
-        result =("You Win! " + player + " beats "  + computer)
-    }else if (player=="rock" && computer =="scissors"){
-        result =("You Win! " + player + " beats "  + computer)
-    }else if (player === computer){
-        result = ("Its a Tie")
-    }else {
-        result = ("You did not type a valid option")
-    }
-}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+    font-size: 36px;
+    background-color: rgb(56, 246, 182);
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
